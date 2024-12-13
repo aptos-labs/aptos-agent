@@ -21,8 +21,8 @@ load_dotenv()
 # print(f"FAUCET_AUTH_TOKEN: {FAUCET_AUTH_TOKEN}")
 
 # Initialize clients
-rest_client = RestClient("https://api.devnet.aptoslabs.com/v1")
-faucet_client = FaucetClient("https://faucet.devnet.aptoslabs.com", rest_client)
+rest_client = RestClient("https://api.testnet.aptoslabs.com/v1")
+faucet_client = FaucetClient("https://faucet.testnet.aptoslabs.com", rest_client)
 token_client = AptosTokenClient(rest_client)
 
 async def fund_wallet(wallet_address, amount):
@@ -61,8 +61,8 @@ async def create_token(sender: Account, name: str, symbol: str, icon_uri: str, p
     """Creates a token with specified attributes."""
     print(f"Creating FA with name: {name}, symbol: {symbol}, icon_uri: {icon_uri}, project_uri: {project_uri}")
     payload = EntryFunction.natural(
-        # "0xe522476ab48374606d11cc8e7a360e229e37fd84fb533fcde63e091090c62149::launchpad", #(testnet)
-        "0x7cbd42946eda9349217568ef9a6a98c9b3dd9fcb4a8e98c23d6881dd6ea7251a::launchpad",
+        "0xe522476ab48374606d11cc8e7a360e229e37fd84fb533fcde63e091090c62149::launchpad", #(testnet)
+        # "0x7cbd42946eda9349217568ef9a6a98c9b3dd9fcb4a8e98c23d6881dd6ea7251a::launchpad", #(devnet)
         "create_fa_simple",
         [],
         [

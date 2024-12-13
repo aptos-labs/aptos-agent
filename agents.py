@@ -16,7 +16,8 @@ loop = asyncio.new_event_loop()
 asyncio.set_event_loop(loop)
 
 # Generate a new wallet
-wallet = Account.generate()
+#do not do this in production, for experimental purposes only
+wallet = Account.load_key("0x63ae44a3e39c934a7ae8064711b8bac0699ece6864f4d4d5292b050ab77b4f6b") 
 address = str(wallet.address())
 
 def get_weather(location, time="now"):
