@@ -24,7 +24,7 @@ identify==2.6.3
 idna==3.10
 iniconfig==2.0.0
 instructor==1.7.0
-Jinja2==3.1.4
+Jinja2==3.1.6
 jiter==0.6.1
 markdown-it-py==3.0.0
 MarkupSafe==3.0.2
